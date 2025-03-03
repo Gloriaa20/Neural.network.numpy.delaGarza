@@ -1,3 +1,21 @@
+# Ignorar archivos de configuración de IDEs y editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar archivos de dependencias de Node.js
+node_modules/
+
+# Ignorar archivos temporales de sistemas operativos
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Ignorar archivos de configuración de entorno
+.env
+
+# Ignorar archivos de logs
+*.log
 
 # Ignore venv virtual environment
 venv/
