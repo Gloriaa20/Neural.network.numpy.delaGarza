@@ -1,4 +1,4 @@
-HEAD
+
 # Activation Functions in Neural Networks
 
 This project implements various activation functions used in neural networks and generates graphs to visualize their behavior.
