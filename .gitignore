@@ -1,21 +1,46 @@
-# Ignorar archivos de configuración de IDEs y editores
+# Ignore virtual environment
+venv/
+
+
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+.virtualenv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings
 .vscode/
+
+# PyCharm settings
 .idea/
-*.sublime-workspace
-*.sublime-project
 
-# Ignorar archivos de dependencias de Node.js
-node_modules/
+# MacOS Finder settings
+.DS_Store
 
-# Ignorar archivos temporales de sistemas operativos
-.DS_Store       # macOS
-Thumbs.db       # Windows
+# Windows Thumbs.db
+Thumbs.db
 
-# Ignorar archivos de configuración de entorno
-.env
-
-# Ignorar archivos de logs
+# Log files
 *.log
 
-# Ignore venv virtual environment
-venv/
+# Test coverage report files
+.coverage
+nosetests.xml
+coverage.xml
+*.cover
+
+# Environment variables file (for example, .env)
+.env
+
+# If you use an IDE like PyCharm, VS Code, etc. or any other text editor that may generate configuration files, include them here
+*.swp
+*.swo

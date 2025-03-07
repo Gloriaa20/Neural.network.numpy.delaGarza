@@ -1,132 +1,111 @@
+📌 Neural Network Implementation (OR Logic Gate)
 
-# Activation Functions in Neural Networks
+This is a simple neural network implementation using Python and NumPy to solve the logical OR problem. The neural network is trained using backpropagation with the sigmoid activation function. The code demonstrates a basic machine learning model for understanding neural networks and their operations.
+Table of Contents
 
-This project implements various activation functions used in neural networks and generates graphs to visualize their behavior.
-
-
-📌 Implemented Functions
-
-Sigmoid: f(x) = 1 / (1 + e^(-x))
-
-Tanh: f(x) = tanh(x)
-
-ReLU (Rectified Linear Unit): f(x) = max(0, x)
-
-Leaky ReLU: f(x) = x if x > 0, alpha * x if x <= 0
-
-Softmax: f(x) = e^x / sum(e^x)
-
-ELU (Exponential Linear Unit): f(x) = x if x > 0, alpha * (e^x - 1) if x <= 0
-
-Swish: f(x) = x * sigmoid(beta * x)
+    - Project Description
+    - Requirements
+    - Setup
+    - How to Run
+    - Code Explanation
+    - License
 
 
-🚀 Requirements
+🚀 Project Description
 
-Make sure you have the following dependencies installed before running the code:
-pip install numpy matplotlib
+This project implements a feedforward neural network with:
 
+    2 input neurons (representing the two inputs for the OR gate),
+    1 hidden layer with 4 neurons,
+    1 output neuron that produces the result of the OR gate.
 
-🖥️ Usage
-
-Save the code in a file named activations.py and run it with:
-python activations.py
-
-
-📊 Visualization
-
-The code will generate graphs for each activation function, showing their behavior over a range of values.
-
-
-🛠️ Author and Contribution
-
-Created to demonstrate activation functions in neural networks. Contributions and improvements are welcome! 🚀
+The neural network is trained on the following truth table for the OR operation:
+Input 1	Input 2	Output (OR)
+0	0	0
+0	1	1
+1	0	1
+1	1	1
 
 
-# Here’s how you can run the code you provided on your machine:
+🖥️ Requirements
 
-1. Install Python 3.8.10
+To run this project, you will need:
 
-- If you don't have Python installed yet, you can download it from the official website.
+    Python 3.x
+    NumPy library
 
-- Make sure to check the option that says "Add Python to PATH" during installation (this will allow you to run python from the command line).
+You can install NumPy by running: 
+pip install numpy
 
 
-2. Create a Virtual Environment (Optional but Recommended)
+📊  Setup
 
-- Creating a virtual environment is a good practice to manage dependencies in your project without affecting other Python installations. To do this:
+Clone this repository to your local machine:
 
-- Open a terminal or command prompt.
+git clone <repository_url>
+cd <repository_directory>
 
-- Navigate to the directory where you want to create your project.
 
-- Run the following command to create a virtual environment:
-  python -m venv venv
+🛠️ Create a virtual environment (optional but recommended):
+python -m venv venv
 
-This will create a folder named venv that contains a separate Python installation.
 
 Activate the virtual environment:
- On Windows: venv\Scripts\activate
 
- On macOS/Linux: source venv/bin/activate
+On Windows:
+venv\Scripts\activate
 
- Once activated, you’ll see the environment name in your terminal prompt indicating that you're working in the virtual environment.
-
-
-3. Install the Required Libraries
-
-The code uses numpy and matplotlib. You need to install these libraries if you haven't already. Run the following command to install them (ensure you are inside your virtual environment if you created one):
-pip install numpy matplotlib
+On Mac/Linux:
+source venv/bin/activate
 
 
-4. Create the Python File with the Code
+🚀 Install the required dependencies:
 
-Create a new file in your favorite text editor or IDE (e.g., Visual Studio Code, PyCharm, or even a basic text editor). Save the code in a file with the .py extension, for example, activation_functions.py.
+pip install -r requirements.txt
 
-
-5. Run the Code
-
-Once you have the file with the code, you can run it as follows:
-
-- Open a terminal or command prompt.
-
-- Navigate to the directory where you saved the Python file. For example, if you saved it in a folder called activation_functions on your desktop, navigate to that folder:
-
-   On Windows: cd C:\Users\YourUserName\Desktop\activation_functions
-   On macOS/Linux: cd ~/Desktop/activation_functions
-
-- Run the Python file with: python activation_functions.py
+(Optional: If you don't have requirements.txt, just install NumPy manually as shown above.)
 
 
-6. View the Results
+How to Run
+    Make sure you have the virtual environment activated (if you're using one).
+    Run the script: python neural_network.py
 
-Once you run the code, three plots will be generated showing the activation functions Sigmoid, Tanh, and ReLU. The plots will appear one by one in a Matplotlib window.
+    The network will train for 10,000 epochs and display the error every 1,000 epochs.
+    After training, the final predictions will be printed, showing the OR gate output for each input.
 
-- Summary of Steps:
-   Install Python.
-   Create a virtual environment (optional).
-   Install the necessary libraries (numpy and matplotlib).
-   Create a .py file with the code.
-   Run the Python file using python file.py.
+Code Explanation
+Neural Network Components:
+    Sigmoid Activation Function: The sigmoid function is used as the activation function for both the hidden layer and the output layer. This function maps input values between 0 and 1, making it suitable for binary classification tasks like the OR gate.
 
-After following these steps, you should be able to see the plots generated for the activation functions. 
-
+    def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
 
 
-# if you have errors, follow the commands.
+Backpropagation: The error from the output is propagated backward to adjust the weights and biases. The derivative of the sigmoid function is used to calculate the gradients for weight updates.
 
-pip install numpy
-pip3 install numpy
+def sigmoid_derivative(x):
+    return x * (1 - x)
 
-source env/bin/activate
-pip install matplotlib
-python -c "import matplotlib; print(matplotlib.__version__)"
-python functions.py
 
-which pip  
-pip install --upgrade pip
+Training Loop: The network runs through 10,000 epochs (iterations), performing forward propagation, calculating the error, and updating the weights and biases using the gradient descent algorithm.
 
-=======
-# Activation.functions.delaGarza
-This repository contains various implementations of activation functions used in neural networks. Activation functions are a crucial component of neural networks as they introduce non-linearity, enabling the network to learn complex patterns in the data. 
-091ea335f5fe7a163a8a0922a38bc9fcd89318e3
+for epoch in range(epochs):
+    # Forward propagation and backpropagation steps
+    # Update weights and biases
+
+
+    Output: After training, the model predicts the OR output for each combination of inputs.
+
+    print("\nFinal Predictions:")
+    print(predicted_output)
+
+Hyperparameters:
+
+    Learning Rate: 0.1
+    Epochs: 10,000
+    Number of Hidden Neurons: 4
+
+Weights and Biases:
+
+    Randomly initialized using a uniform distribution to start the training process.
+    Adjusted during training via backpropagation.
