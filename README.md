@@ -84,20 +84,20 @@ After training, the final predictions will be printed, showing the OR gate outpu
 - Code Explanation
   Neural Network Components:
 
-  Sigmoid Activation Function: The sigmoid function is used as the activation function for both the hidden layer and the output layer. This function maps input values between 0 and 1, making it suitable for binary classification tasks 
+  - Sigmoid Activation Function: The sigmoid function is used as the activation function for both the hidden layer and the output layer. This function maps input values between 0 and 1, making it suitable for binary classification tasks 
   like the OR gate.
   
      def sigmoid(x):
      return 1 / (1 + np.exp(-x))
 
 
-  Backpropagation: The error from the output is propagated backward to adjust the weights and biases. The derivative of the sigmoid function is used to calculate the gradients for weight updates.
+  - Backpropagation: The error from the output is propagated backward to adjust the weights and biases. The derivative of the sigmoid function is used to calculate the gradients for weight updates.
 
      def sigmoid_derivative(x):
      return x * (1 - x)
 
 
-Training Loop: The network runs through 10,000 epochs (iterations), performing forward propagation, calculating the error, and updating the weights and biases using the gradient descent algorithm.
+  - Training Loop: The network runs through 10,000 epochs (iterations), performing forward propagation, calculating the error, and updating the weights and biases using the gradient descent algorithm.
 
   For epoch in range(epochs):
     - Forward propagation and backpropagation steps
