@@ -108,12 +108,10 @@ for epoch in range(epochs):
     print(predicted_output)
 
 Hyperparameters:
-
     Learning Rate: 0.1
     Epochs: 10,000
     Number of Hidden Neurons: 4
 
 Weights and Biases:
-
     Randomly initialized using a uniform distribution to start the training process.
     Adjusted during training via backpropagation.
