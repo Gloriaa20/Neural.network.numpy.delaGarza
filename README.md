@@ -76,7 +76,7 @@ On Mac/Linux:
     Make sure you have the virtual environment activated (if you're using one).
     Run the script: 
     
-     python neural_network.py
+      python neural_network.py
 
 The network will train for 10,000 epochs and display the error every 1,000 epochs.
 After training, the final predictions will be printed, showing the OR gate output for each input.
